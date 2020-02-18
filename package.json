@@ -22,6 +22,9 @@
   },
   "dependencies": {
     "@aws-cdk/core": "1.24.0",
+    "@carnivalofthecosmos/bootstrap": "0.0.1-alpha.6",
+    "@carnivalofthecosmos/core": "0.0.1-alpha.5",
+    "@carnivalofthecosmos/service": "0.0.1-alpha.5",
     "source-map-support": "^0.5.16"
   }
 }
