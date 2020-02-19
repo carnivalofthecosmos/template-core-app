@@ -1,16 +1,29 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
-import { App } from '@aws-cdk/core';
-import { ProjectStack, AccountStack, EcsAppEnvStack } from '@carnivalofthecosmos/core';
+import "source-map-support/register";
+import { App } from "@aws-cdk/core";
+import {
+  ProjectStack,
+  AccountStack,
+  CiEnvStack,
+  EcsAppEnvStack
+} from "@carnivalofthecosmos/core";
 
 const app = new App();
 
-const projectStack = new ProjectStack(app, 'Devops', {
-  tld: 'carnivalofthecosmos.com',
+const projectStack = new ProjectStack(app, "Devops", {
+  tld: "carnivalofthecosmos.com"
 });
 
-const mgtAccount = new AccountStack(projectStack, 'Mgt');
+const mgtAccount = new AccountStack(projectStack, "Mgt", {
+  cidr: "10.0.0.0/22"
+});
 
-const devEcsAppEnv = new EcsAppEnvStack(mgtAccount, 'Dev');
+const ciEnv = new CiEnvStack(mgtAccount, {
+  networkBuilder: mgtAccount.NetworkBuilder
+});
 
-const tstAppEnv = new EcsAppEnvStack(mgtAccount, 'Tst');
+const devEcsAppEnv = new EcsAppEnvStack(mgtAccount, "Dev", {
+  networkBuilder: mgtAccount.NetworkBuilder
+});
+
+const tstAppEnv = new EcsAppEnvStack(mgtAccount, "Tst");
