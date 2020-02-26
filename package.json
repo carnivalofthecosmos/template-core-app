@@ -1,9 +1,6 @@
 {
   "name": "template-core-app",
   "version": "0.1.0",
-  "bin": {
-    "template-core-app": "bin/template-core-app.js"
-  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
@@ -14,12 +11,12 @@
     "@aws-cdk/aws-codebuild": "^1.25.0",
     "@aws-cdk/aws-codecommit": "^1.25.0",
     "@aws-cdk/aws-codepipeline": "^1.25.0",
+    "@aws-cdk/aws-codepipeline-actions": "^1.25.0",
     "@aws-cdk/aws-ecs": "^1.25.0",
     "@aws-cdk/aws-route53": "^1.25.0",
     "@aws-cdk/core": "^1.25.0",
-    "@carnivalofthecosmos/bootstrap": "^0.0.1-alpha.19",
-    "@carnivalofthecosmos/core": "^0.0.1-alpha.19",
-    "@carnivalofthecosmos/pipeline": "0.0.1-alpha.19",
+    "@carnivalofthecosmos/core": "^0.0.1-alpha.21",
+    "@carnivalofthecosmos/pipeline": "^0.0.1-alpha.21",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
