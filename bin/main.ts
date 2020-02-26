@@ -11,7 +11,7 @@ import {
 const app = new App();
 
 // Project Infra
-const projectStack = new ProjectStack(app, "Devops", {
+const projectStack = new ProjectStack(app, "TemplateCore", {
   tld: "carnivalofthecosmos.com"
   // env: { account: "1111" }
 });
@@ -22,7 +22,7 @@ const mgtAccount = new AccountStack(projectStack, "Mgt", {
 });
 
 // CiCd Infra
-const cicd = new CiCdStack(mgtAccount, {
+const ciCd = new CiCdStack(mgtAccount, {
   networkBuilder: mgtAccount.NetworkBuilder
 });
 
